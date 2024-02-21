@@ -1,8 +1,9 @@
+import { Header } from '../_components';
+
 export default function Home() {
   return (
     <main>
-      hello world
-      { new Date().getTime() }
+      <Header />
     </main>
   );
 }
