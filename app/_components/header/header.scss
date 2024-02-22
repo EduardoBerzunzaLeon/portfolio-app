@@ -59,7 +59,7 @@
     }
 }
 
-
+// -- 030a50
 .header {
     position: absolute;
     top: 0;
@@ -68,7 +68,7 @@
     width: 100%;
     background-image: linear-gradient( to right bottom,
         rgba(#0A1D29, 1),
-        rgba(#158560, 1) );
+        rgba(#030a50, 1) );
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,20 +140,51 @@
         }
     }
 
-    &__profile img{
+    &__profile {
         position: relative;
         width: 20rem;
         height: 20rem;
+        box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
         border-radius: 50%;
-        border: 1rem solid #158560;
-        z-index: 1;
+        outline: .8rem solid #158560;
+    }
 
+    &__caption {
+        position: absolute; 
+        bottom: -20rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        backdrop-filter: blur(15px);
+        transition: all .5s;
+        // border-radius: 50%;
+    }
+
+    &__profile:hover &__caption {
+        bottom: 0;
+    }
+
+    &__profile img{
+        // transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+        // width: 20rem;
+        // height: 20rem;
+        width: 100%;
+        height: 100%;  
+        // border-radius: 50px;
+        // border: 1rem solid #158560;
+      
+        transition: all .5s;
+        object-fit: cover;
+        object-position: center;
     }
     
-    // &:hover img{
-    //     transform: translateX(-4rem) scale(1);
-    //     filter: blur(3px) brightness(80%);
-    // }
 }
 
 .wave {
@@ -195,11 +226,13 @@ ul.floating-boxes li {
     background-image: linear-gradient(
       135deg,
       #0A1D29,
-      #2aca95
+      #ffffff
     );
     bottom: 0;
     opacity: 0;
-    animation: floatingbox 10s linear infinite;
+    animation: floatingbox 10s ease-in-out infinite;
+    // clip-path: circle(50% at 50% 50%);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     // z-inde
   }
   
@@ -284,16 +317,28 @@ ul.floating-boxes li {
   }
   
   @keyframes floatingbox {
+
     0% {
-      transform: translateY(0) rotate(0);
-      opacity: 0;
-      border-radius: 0;
+        border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    } 
+    
+    50% {
+        border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+        // border-radius:  40% 60% 60% 40% / 60% 30% 70% 40%;
     }
-  
-    100% {
-      transform: translateY(-200rem) rotate(1080deg);
-      opacity: 1;
-      border-radius: 50%;
+
+    70% {
+        border-radius:  40% 60% 60% 40% / 60% 30% 70% 40%;
+    }
+    
+    100%{
+        border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translateY(-100vh) rotate(1080deg);
+        opacity: .4;
     }
   }
+  
+
   

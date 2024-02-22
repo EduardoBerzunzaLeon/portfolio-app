@@ -37,11 +37,21 @@ export const Header = () => (
         <button type="button">Contact me</button>
       </div>
 
+      {/* <figure className="header__profile">
+        <Image
+          src={profilePic}
+          alt="profile"
+        />
+      </figure> */}
+
       <figure className="header__profile">
         <Image
           src={profilePic}
           alt="profile"
         />
+        <figcaption className="header__caption">
+          hola mundo
+        </figcaption>
       </figure>
 
       <div className="wave">
