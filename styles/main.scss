@@ -1,13 +1,14 @@
-@import 'base/normalize';
 
-@import 'abstracts/functions';
-@import 'abstracts/placeholders';
-@import 'abstracts/mixins';
-@import 'abstracts/variables';
+@use 'base/normalize';
 
-@import 'base/animations';
-@import 'base/base';
-@import 'base/typography';
-@import 'base/utilities';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+@use 'abstracts/variables';
+@use 'abstracts/placeholders';
 
-@import 'components/buttons';
+@use 'base/animations';
+@use 'base/base';
+@use 'base/typography';
+@use 'base/utilities';
+
+@use 'components/buttons';

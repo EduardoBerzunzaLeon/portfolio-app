@@ -1,8 +1,4 @@
-%flex-center { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@use "../../../styles/main.scss";
 
 .header {
   background-image: linear-gradient( 
@@ -21,11 +17,11 @@
 
 
     &__text-box {
-        align-items: center;
         display: flex;
+        align-items: center;
+        justify-content: space-evenly;
         flex-direction: column;
         height: 22rem;
-        justify-content: space-evenly;
         padding: 3rem;
         position: relative;
         z-index: 1;
@@ -33,12 +29,10 @@
 
 
     &__profile {
-        align-items: center;
         border-radius: 50%;
         box-shadow: 0 2rem 2rem rgba(var(--color-black), 0.2);
-        display: flex;
+        @extend %flex-center;
         height: 20rem;
-        justify-content: center;
         outline: .8rem solid var(--color-secondary-dark);
         overflow: hidden;
         position: relative;
