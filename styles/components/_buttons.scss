@@ -1,0 +1,46 @@
+.btn {
+    &,
+    &:link, 
+    &:visited {
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: .3rem solid var(--color-secondary-dark);
+        color: var(--color-white);
+        cursor: pointer;
+        user-select: none;
+        background: linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 50%,
+            var(--color-secondary-dark) 50%,
+        );
+        background-size: 220%;
+        transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    &:hover{
+        background-position: right;
+        color: var(--color-primary-dark);
+        transform: translate(var(--color-primary-light)em,-.3rem);
+        box-shadow: 0 1rem 2rem rgba(var(--color-black) 0.2);
+    }
+
+    &:active {
+        transform: translate(-.1rem, .1rem);
+        box-shadow: 0 .5rem 1rem rgba(var(--color-black), 0.2);
+    }
+
+    &--s {
+        padding: .5rem 2.5rem;
+    }
+    
+    &--m {
+        padding: 1rem 3rem;
+    }
+
+    &--l {
+        padding: 1.5rem 5rem;
+    }
+}
