@@ -20,6 +20,7 @@ export const Header = () => (
 
     <figure className="header__profile">
       <Image
+        priority
         src={profilePic}
         alt="profile"
       />

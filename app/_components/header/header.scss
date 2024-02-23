@@ -1,10 +1,8 @@
-@use "../../../styles/main.scss";
-
 .header {
   background-image: linear-gradient( 
     to right bottom, 
-    var(--color-primary-dark), 
-    var(--color-primary-light)
+    $color-primary-dark, 
+    $color-primary-light
     );
     @extend %flex-center;
     flex-wrap: wrap-reverse;
@@ -30,10 +28,10 @@
 
     &__profile {
         border-radius: 50%;
-        box-shadow: 0 2rem 2rem rgba(var(--color-black), 0.2);
+        box-shadow: 0 2rem 2rem rgba($color-black, .3);
         @extend %flex-center;
         height: 20rem;
-        outline: .8rem solid var(--color-secondary-dark);
+        outline: .8rem solid $color-secondary-dark;
         overflow: hidden;
         position: relative;
         width: 20rem;
@@ -45,7 +43,7 @@
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         justify-content: center;
         margin-top: 1rem;
         backdrop-filter: blur(.5rem);
@@ -65,26 +63,26 @@
         }
 
         :nth-child(1):hover {
-          background: var(--color-github);
-          color: var(--color-white);
+          background: $color-github;
+          color: $color-white;
         }
         
         :nth-child(2) {
-          color: var(--color-facebook);
+          color: $color-facebook;
         }
 
         :nth-child(2):hover {
-          background: var(--color-facebook);
-          color: var(--color-white);
+          background: $color-facebook;
+          color: $color-white;
         }
         
         :nth-child(3) {
-          color: var(--color-instragram);
+          color: $color-instragram;
         }
         
         :nth-child(3):hover {
-          background: var(--color-instragram);
-          color: var(--color-white);
+          background: $color-instragram;
+          color: $color-white;
         }
     }
 
