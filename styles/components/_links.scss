@@ -1,0 +1,30 @@
+a {
+    &,
+    &:link, 
+    &:visited {
+        position: relative;
+        font-size: 1.5rem;
+        color: $color-white;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0 1rem;
+    
+        &::before {
+            content: '';
+            width: 0;
+            height: .2rem;
+            background: $color-secondary-light;
+            position: absolute;
+            bottom: -.5rem;
+            transition: all .5s;
+        }
+    
+        &:hover  {
+            color: $color-secondary-light;
+    
+            &::before {
+                width: 50%; 
+            }
+        }
+    }
+}

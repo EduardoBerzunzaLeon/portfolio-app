@@ -1,18 +1,14 @@
 .header {
   background-image: linear-gradient( 
-    to right bottom, 
-    $color-primary-dark, 
-    $color-primary-light
+      to right bottom, 
+      $color-primary-dark, 
+      $color-primary-light
     );
     @extend %flex-center;
     flex-wrap: wrap-reverse;
-    height: 100vh;
     left: 0;
-    overflow: hidden;
-    position: relative;
     top: 0;
-    width: 100%;
-
+    overflow: hidden;
 
     &__text-box {
         display: flex;
