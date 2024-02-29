@@ -11,7 +11,8 @@ export const About = () => (
         </div>
       </div>
       <div className="about__image col-6">
-        <img src="./profile.jpg" alt="profile" />
+        {/* <img src="./profile.jpg" alt="profile" /> */}
+        <img src="https://picsum.photos/id/1011/250/250" alt="test" />
       </div>
 
     </div>

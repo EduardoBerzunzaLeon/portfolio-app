@@ -19,10 +19,29 @@
     &__image {
         width: 50%;
         height: 50%;
-        background: url(./profile.jpg);
+        // background: url(./profile.jpg);
         background-size: cover;
         background-position: center;
         @extend %flex-center;
         // clip-path: circle(90% at 92% 50%);
+        img {
+            --gradient: 10% /45% 45% no-repeat linear-gradient(#000 0 0);
+            --mask:
+              left   var(--_position,0%) top    var(--gradient),
+              bottom var(--_position,0%) left   var(--gradient),
+              top    var(--_position,0%) right  var(--gradient),
+              right  var(--_position,0%) bottom var(--gradient);
+            -webkit-mask: var(--mask);
+                    mask: var(--mask);
+            filter: grayscale(80);
+            transition: .3s linear;
+            cursor: pointer;
+          }
+
+          img:hover {
+            --_position: 10%;
+            filter: grayscale(0);
+          }
+          
     }
 }
