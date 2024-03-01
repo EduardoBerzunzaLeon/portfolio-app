@@ -44,6 +44,9 @@ module.exports = {
     ],
     'react/react-in-jsx-scope': RULES.OFF,
     'react/function-component-definition': RULES.OFF, // Disabled airbnb function component in jsx| tsx
+    'react/require-default-props':[RULES.ERROR, {
+      'functions': "ignore"
+    }],
     'react/jsx-curly-spacing': [
       RULES.ERROR,
       {

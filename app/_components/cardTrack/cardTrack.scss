@@ -1,0 +1,5 @@
+.card-track {
+    transform-style: preserve-3d;
+    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+    transition: all var(--delay);
+}
