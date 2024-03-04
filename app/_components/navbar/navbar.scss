@@ -19,9 +19,16 @@
         letter-spacing: .3rem;
         font-weight: 600;
         text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
     
     &__links-box {
         @extend %flex-center;
+
+        :not(:last-child) {
+            padding: 0 1rem;
+        }
     }
 }

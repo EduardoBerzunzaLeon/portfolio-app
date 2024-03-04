@@ -1,27 +1,103 @@
 .skill {
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: $color-primary-light;
-
-    h2 {
-        padding: 4rem;
-    }
-
-    &__card-container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+    background: $color-primary-dark;
 }
 
 .card {
     width: 30rem;
     height: 40rem;
-    background:  $color-secondary-dark;
+    align-self: start;
+    perspective: 150rem;
+    -webkit-prespective: 150rem;
+    position: relative;
+       
+    &__side {
+        height: 40rem;
+        width: 100%;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;  
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 3rem 4rem rgba($color-black, .15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+        
+        
+        &--front{
+            background-color: rgba($color-white, .74);
+            position: relative;
+        }
+        
+
+        &--back{
+            transform: rotateY(180deg);
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+
+    &__ribbon--primary {
+        filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    }
+
+    &__ribbon--primary::before {
+        @extend %ribbon;
+        background: $color-primary-light;
+    }
+    
+    &__ribbon--secondary::before {
+        @extend %ribbon;
+        background: $color-secondary-dark;
+    }
+    
+    &__ribbon--tertiary::before {
+        @extend %ribbon;
+        background: $color-tertiary-dark;
+    }
+
+    &__icon {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        
+        &--primary {
+            fill: url('#primary_gradient');
+            border: .6rem inset $color-primary-dark;
+        }
+        
+        &--secondary {
+            fill: url('#secondary_gradient');
+            border: .6rem inset $color-secondary-dark;
+        }
+        
+        &--tertiary {
+            fill: url('#tertiary_gradient');
+            border: .6rem inset $color-tertiary-dark;
+        }
+    }
+    
+    &__title{
+        padding: 2rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
 }

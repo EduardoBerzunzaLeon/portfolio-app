@@ -1,10 +1,48 @@
+// COLORS
 $color-white: #fff;
 $color-black: #000;
 $color-primary-light: #030a50;
 $color-primary-dark: #0A1D29;
-$color-secondary-light: #8afcd6;
+$color-primary-dark-2: #173547;
+$color-secondary-light: #6fdfba;
 $color-secondary-dark: #158560;
+$color-tertiary-light: #f55454;
+$color-tertiary-dark: #be0000;
+
 $color-aux: #2aca95;
 $color-github: #24292E;
 $color-facebook: #3b5998;
 $color-instragram: #C13584;
+
+
+// GRADIENTS
+$gradient-primary: linear-gradient( 
+    135deg, 
+    $color-primary-dark, 
+    $color-primary-light
+  );
+
+$gradient-primary-2: linear-gradient( 
+    135deg, 
+    $color-primary-dark-2, 
+    $color-primary-light
+  );
+
+$gradient-secondary: linear-gradient( 
+    135deg, 
+    $color-secondary-dark, 
+    $color-secondary-light
+  );
+
+$gradient-tertiary: linear-gradient( 
+    135deg, 
+    $color-tertiary-dark, 
+    $color-tertiary-light
+  );
+
+$gradients: (
+    "primary": $gradient-primary,
+    "primary-2": $gradient-primary-2,
+    "secondary": $gradient-secondary,
+    "tertiary": $gradient-tertiary,
+);

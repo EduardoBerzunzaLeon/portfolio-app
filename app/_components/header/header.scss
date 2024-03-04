@@ -1,9 +1,5 @@
 .header {
-  background-image: linear-gradient( 
-      to right bottom, 
-      $color-primary-dark, 
-      $color-primary-light
-    );
+  background-image: $gradient-primary;
     @extend %flex-center;
     flex-wrap: wrap-reverse;
     left: 0;

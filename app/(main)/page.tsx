@@ -8,20 +8,24 @@ import {
   Skill,
   Testimonial,
   Footer,
+  IconsGradientList,
 } from '../_components';
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Header />
-      <About />
-      <Parallax />
-      <Skill />
-      <Project />
-      <Testimonial />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <IconsGradientList />
+      <main>
+        <Navbar />
+        <Header />
+        <About />
+        <Parallax />
+        <Skill />
+        <Project />
+        <Testimonial />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }
