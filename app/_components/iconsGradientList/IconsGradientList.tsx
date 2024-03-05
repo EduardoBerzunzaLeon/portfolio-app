@@ -1,5 +1,3 @@
-'use client';
-
 import { IconGradient, IconGradientProps } from '../iconGradient/IconGradient';
 import variables from '../../../styles/modules/variables.module.scss';
 

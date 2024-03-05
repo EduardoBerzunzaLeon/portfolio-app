@@ -40,6 +40,13 @@
         &--back{
             transform: rotateY(180deg);
         }
+
+        p{
+            padding: 3rem 2rem;
+            line-height: 3.5rem;
+            font-weight: 500;
+            height: 100%;
+        }
     }
 
     &:hover &__side--front {
