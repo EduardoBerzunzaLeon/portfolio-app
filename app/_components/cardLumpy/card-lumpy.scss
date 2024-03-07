@@ -6,6 +6,7 @@
 		opacity: 1;
 	}
 }
+
 @keyframes up-down {
 	0%,100% {
 		transform: none;
@@ -14,6 +15,7 @@
 		transform: scale(0.75, 1.25) translateY(-100%);
 	}
 }
+
 @keyframes down-up {
 	0%,20%,100% {
 		transform: none;
@@ -23,7 +25,9 @@
 	}
 }
 
-$color-card: #6b04ff;
+// $color-card: #6b04ff;   
+$color-card: $color-primary-dark-2;
+// $color-card: $color-white;
 $duration: 0.5s;
 $lag-duration: calc($duration * 1.5);
 $easing: cubic-bezier(0.7, 0, 0.2, 1);
@@ -36,56 +40,35 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
 	visibility: hidden;
 }
 
-*, :before, :after {
-	box-sizing: border-box;
-	position: relative;
-	transition: inherit;
-	transition-property: transform;
-	transition-duration: $duration;
-	transition-timing-function: $easing;
+.opacity-move {
+	animation: opacity $lag-duration $easing both;
+	transform: translateY(0%) !important;
 }
 
-// .toggle {
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	opacity: 0;
-// 	&:checked {
-// 		~ {
-// 			.description {
-// 				.description__content {
-// 					animation: opacity $lag-duration $easing both;
-// 					transform: translateY(0%);
-// 				}
-// 				transform: translateY(20%);
-// 				.drip {
-// 					animation: up-down $lag-duration $easing both;
-// 				}
-// 			}
-// 			* {
-// 				.button {
-// 					&:before {
-// 						transform: rotate(-135deg);
-// 					}
-// 				}
-// 			}
-// 			.content {
-// 				.drip {
-// 					animation: down-up $lag-duration $easing both;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+.isRed {
+    transform: translateY(0%) !important;
+}
+
+.isClicked:before {
+	transform: rotate(-135deg) !important;
+}
+
+.drippping-bottom .drip {
+    animation: up-down $lag-duration $easing both;
+}
+
+.drippping-top .drip {
+    animation: down-up $lag-duration $easing both;
+}
+
 
 .card-lumpy {
-	height: 90%;
-     width: 257px;
+	 height: 40rem;
 	 color: $color-white;
 	 font-size: 3vmin;
      display: grid;
-	 grid-gap: 7vmin;
-	 grid-template-rows: repeat(3, 33.3%);
+	 grid-gap: 10vmin;
+	 grid-template-rows: repeat(2, 20%) repeat(1, 29%);
 	 grid-template-columns: 1fr;
 
 
@@ -93,12 +76,12 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
         grid-column: 1;
         grid-row: 1 / span 2;
         position: relative;
-        z-index: 3;
         display: flex;
         justify-content: center;
     }
-
+    
     &__button {
+        z-index: 3;
         cursor: pointer;
         border-radius: 3vmin;
         display: flex;
@@ -108,11 +91,10 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
         height: 10vmin;
         position: absolute;
         bottom: -5vmin;
-        background-color: $color-white;
+        background-color: $color-secondary-dark;
         color: $color-black;
         box-shadow: 0 2vmin 2vmin rgba(0, 0, 0, 0.2);
         transition: transform calc($duration / 2) $easing;
-    
         &:hover {
             transform: scale(0.9);
         }
@@ -123,13 +105,14 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
             width: 2vmin;
             border: 0.5vmin solid transparent;
             border-bottom-color: $color-black;
-            transition-property: transform;
+            border-right-color: $color-black;
+            transform: rotate(45deg);
+            transition: transform $duration $easing;
         }
     }
-    
 
     &__content {
-        background: $color-card;
+      
         border-radius: 5vmin;
         display: flex;
         align-items: center;
@@ -141,8 +124,12 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
         z-index: 2;
         filter: url(#lumpy);
 
+        
+        
+        
         &-text {
-            margin: 1rem;
+            background: $color-card;
+            border-radius: inherit;
             width: 100%;
             height: 100%;
             z-index: 3;
@@ -151,6 +138,58 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
+
+            
+        }
+
+        &-image {
+            width: 100%;
+            height: 50%;
+            background: url(./proyect.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 40;
+            // -webkit-box-shadow: -1px -1px 9px 2px rgba(0,0,0,0.3);
+            // -moz-box-shadow: -1px -1px 9px 2px rgba(0,0,0,0.3);
+            // box-shadow: -1px -1px 9px 2px rgba(0,0,0,0.3);
+            // background-blend-mode: multiply;
+            filter: grayscale(8);
+            transition: all .5s;
+            cursor: pointer;
+
+            &:hover {
+                filter: grayscale(0);
+                transform: scale(1.1);
+            }
+
+        }
+
+        h3 {
+            position: relative;
+            padding-left: 1rem;
+            padding-top: 1rem;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            color: $color-secondary-light;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -.4rem;
+                left: 0;
+                width: 98%;
+                height: .1rem;
+                background: currentColor;
+            }
+        }
+
+        p {
+            padding: .5rem 1rem 1rem 1rem;
+            font-size: 1.4rem;
+            color: $color-secondary-light;
+            font-weight: 550;
+            text-align: left;
         }
     }
 
@@ -158,7 +197,7 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
         position: absolute;
         width: 100%;
         height: 100%;
-        filter: url(#goo);
+        filter: url(#lumpy);
     }
 
     &__description {
@@ -170,12 +209,13 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
         flex-direction: column;
         position: relative;
         transform: translateY(-120%);
-        transition-property: transform;
-        filter: url(#goo);
+        transition: transform $duration $easing;
+        filter: url(#lumpy);
+        // padding: 1rem;
 
         
         &-content {
-            margin: 1rem;
+            padding: 1rem;
             width: 100%;
             height: 100%;
             z-index: 3;
@@ -186,16 +226,15 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
             flex-direction: column;
             opacity: 0;
             transform: translateY(-80%);
-            transition-property: opacity, transform;
+            transition: all $duration $easing;
         }
-
-
     }
+
     &__bg-description {
         position: absolute;
         width: 100%;
         height: 100%;
-        filter: url(#goo);
+        filter: url(#lumpy);
     }
 }
 
@@ -206,8 +245,11 @@ $easing: cubic-bezier(0.7, 0, 0.2, 1);
 	height: 10vmin;
 	width: 7vmin;
 	background: $color-card;
+    // background: red;
 	border-radius: 5vmin;
-
+    // border-color: $color-card;
+    // transition: transform $duration $easing;
+    
     &--top {
         bottom: 2px;
     }

@@ -16,7 +16,7 @@ export const CardRotate = ({
   <div className={`card-rotate ${className}`}>
     <div className={`card-rotate__side card-rotate__side--front card-rotate__ribbon--${gradient}`}>
       <Icon className={`card-rotate__icon card-rotate__icon--${gradient}`} />
-      <h3 className="card-rotate__title text-grad--primary">{title}</h3>
+      <h3 className={`card-rotate__title text-grad--${gradient}`}>{title}</h3>
     </div>
     <div className={`card-rotate__side card-rotate__side--back bg-grad--${gradient}`}>
       {children}
