@@ -14,6 +14,11 @@ $color-github: #24292E;
 $color-facebook: #3b5998;
 $color-instragram: #C13584;
 
+$color-react:  #61dbfb;
+$color-node: #3C873A;
+$color-redux: #764abc;
+$color-typescript: #235a97;
+$color-mongo: #3FA037;
 
 // GRADIENTS
 $gradient-primary: linear-gradient( 
@@ -45,3 +50,19 @@ $gradients: (
     "secondary": $gradient-secondary,
     "tertiary": $gradient-tertiary,
 );
+
+
+// $color-react:  #61dbfb;
+// $color-node: #3C873A;
+// $color-redux: #764abc;
+// $color-typescript: #235a97;
+// $color-mongo: #3FA037;
+
+
+$color-badges: (
+  'react':   #066d89,
+  'node':  #3C873A,
+  'redux':  #764abc,
+  'typescript':  #235a97,
+  'mongo':  #3FA037,
+)

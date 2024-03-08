@@ -5,3 +5,10 @@
         background-image: $gradient;
     }
 }
+
+
+@each $name, $color in $color-badges {
+    .bg--#{$name} {
+        background: $color;
+    }
+}
