@@ -2,63 +2,72 @@
 
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { useState } from 'react';
-import Image from 'next/image';
-import './card-lumpy.scss';
-import { AiOutlineEye } from 'react-icons/ai';
-import proyectPic from './proyect.png';
 
-export const CardLumpy = () => {
-  const [ isToggle, setIsToggle ] = useState(false);
+import Image, { StaticImageData } from 'next/image';
+import { AiOutlineEye } from 'react-icons/ai';
+
+import { Badge, BadgeProps } from '../badge/Badge';
+
+import './card-lumpy.scss';
+
+interface Props {
+  title: string;
+  image: StaticImageData;
+  altImage: string;
+  description: string;
+  technologies: BadgeProps[];
+}
+
+export const CardLumpy = ({
+  title, image, altImage, description, technologies,
+}: Props) => {
+  const [ isOpen, setIsOpen ] = useState(false);
 
   const onClick = () => {
-    setIsToggle((toggle) => !toggle);
+    setIsOpen((open) => !open);
   };
 
   return (
-    <div className="card-lumpy col-4">
+    <div className={`card-lumpy col-4 ${isOpen ? 'open' : ''}`}>
       <div className="card-lumpy__container-button">
-        <button type="button" className={`card-lumpy__button ${isToggle ? 'isClicked' : ''}`} onClick={onClick} />
+        <button type="button" className="card-lumpy__button" onClick={onClick} />
       </div>
-      <div className="card-lumpy__content">
-        <div className="card-lumpy__content-text">
-          {/* // eslint-disable-next-line @next/next/no-img-element */}
+      <div className="card-lumpy__container">
+        <div className="card-lumpy__container-text">
           <Image
-            src={proyectPic}
-            alt="project"
-            className="card-lumpy__content-image"
+            src={image}
+            alt={altImage}
+            className="card-lumpy__container-image"
           />
-          <h3>
-            Tutor App
+          <h3 className="text--left">
+            { title }
           </h3>
-          <div className="icon__container">
+          <div className="card-lumpy__container-icon">
             <span>Ver más</span>
-            <AiOutlineEye className="icon" />
+            <AiOutlineEye className="card-lumpy__icon" />
           </div>
-
-          <p>Sistema de gestion de alumnos de univerdad y sus tutores</p>
+          <p>{ description }</p>
         </div>
-        <div className={`card-lumpy__bg-content ${isToggle ? 'drippping-top' : ''}`}>
-          <div className="drip drip--top" />
-          <div className="drip drip--top" />
-          <div className="drip drip--top" />
+        <div className="card-lumpy__bg">
+          <div className="card-lumpy__drip card-lumpy__drip--top" />
+          <div className="card-lumpy__drip card-lumpy__drip--top" />
+          <div className="card-lumpy__drip card-lumpy__drip--top" />
         </div>
       </div>
 
-      <div className={`card-lumpy__description ${isToggle ? 'isRed' : ''}`}>
-        <div className={`card-lumpy__description-content ${isToggle ? 'opacity-move' : ''}`}>
-          <h3>Tecnologías</h3>
+      <div className="card-lumpy__description">
+        <div className="card-lumpy__description-container">
+          <h3 className="text--center">Tecnologías</h3>
           <div className="bagde__container">
-            <span className="badge bg--react">Reactjs</span>
-            <span className="badge bg--node">Nodejs</span>
-            <span className="badge bg--mongo">Mongodb</span>
-            <span className="badge bg--redux">Redux</span>
-            <span className="badge bg--typescript">Typescript</span>
+            {technologies.map((badge) => (
+              <Badge {...badge} key={badge.className} />
+            ))}
           </div>
         </div>
-        <div className={`card-lumpy__bg-description ${isToggle ? 'drippping-bottom' : ''}`}>
-          <div className="drip drip--bottom" />
-          <div className="drip drip--bottom" />
-          <div className="drip drip--bottom" />
+        <div className="card-lumpy__bg">
+          <div className="card-lumpy__drip card-lumpy__drip--bottom" />
+          <div className="card-lumpy__drip card-lumpy__drip--bottom" />
+          <div className="card-lumpy__drip card-lumpy__drip--bottom" />
         </div>
       </div>
 

@@ -1,0 +1,17 @@
+.badge {
+    font-size: 1.2rem;
+    padding: .5rem .7rem;
+    border-radius: 1rem;
+    display: inline;
+    font-weight: 500;
+    transition: all .2s;
+    margin: .3rem;
+    box-shadow: $shadow-hight;
+    color: $color-white;
+}
+
+
+.bagde__container {
+    @extend %flex-center;
+    flex-wrap: wrap;
+}

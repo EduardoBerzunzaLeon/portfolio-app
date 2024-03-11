@@ -33,25 +33,30 @@
 	visibility: hidden;
 }
 
-.opacity-move {
-	animation: opacity 1.4s $easing both;
-	transform: translateY(0%) !important;
-}
 
-.isRed {
-    transform: translateY(-20%) !important;
-}
+.open  {
+    .card-lumpy {
+        &__button:before {
+            transform: rotate(-135deg) !important;
+        }
 
-.isClicked:before {
-	transform: rotate(-135deg) !important;
-}
+        &__drip--top {
+            animation: down-up $lag-duration $easing both;
+        }
 
-.drippping-bottom .drip {
-    animation: up-down $lag-duration $easing both;
-}
+        &__description {
+            transform: translateY(-8%) !important;
 
-.drippping-top .drip {
-    animation: down-up $lag-duration $easing both;
+            &-container {
+                animation: opacity 1.4s $easing both;
+                transform: translateY(0%) !important;
+            }
+        }
+
+        &__drip--bottom {
+            animation: up-down $lag-duration $easing both;
+        }
+    }
 }
 
 
@@ -65,6 +70,34 @@
 	 grid-template-columns: 1fr;
      max-width: 350px;
 
+    p {
+        width: 100%;
+        padding: .5rem 1rem 1rem 1rem;
+        font-size: 1.4rem;
+        color: $color-primary-dark-2;
+        font-weight: 550;
+        text-align: left;
+    }
+
+    h3 {
+        position: relative;
+        padding-left: 1rem;
+        padding-top: 1rem;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        color: $color-primary-dark-2;
+        
+        
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -.4rem;
+            left: 1rem;
+            width: 90%;
+            height: .16rem;
+            background: currentColor;
+        }
+    }
 
     &__container-button {
         grid-column: 1;
@@ -72,6 +105,13 @@
         position: relative;
         display: flex;
         justify-content: center;
+    }
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        filter: url(#lumpy);
     }
     
     &__button {
@@ -107,8 +147,7 @@
         }
     }
 
-    &__content {
-      
+    &__container {
         border-radius: 5vmin;
         display: flex;
         align-items: center;
@@ -131,17 +170,12 @@
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
-            // border: 1px solid $color-black;
         }
 
         &-image {
             width: 100%;
-            height: 50%;
+            height: 60%;
             object-fit: cover;
-
-            // background-size: cover;
-            // background-repeat: no-repeat;
-            // background-position: center;
             transition: all $duration;
             cursor: pointer;
 
@@ -151,30 +185,7 @@
 
         }
 
-
-        h3 {
-            width: 100%;
-            text-align: left;
-            position: relative;
-            padding-left: 1rem;
-            padding-top: 1rem;
-            font-size: 1.7rem;
-            text-transform: uppercase;
-            color: $color-primary-dark-2;
-            
-            
-            &::before {
-                content: '';
-                position: absolute;
-                bottom: -.4rem;
-                left: 1rem;
-                width: 90%;
-                height: .1rem;
-                background: currentColor;
-            }
-        }
-
-        .icon__container {
+        &-icon {
             display: flex;
             align-items: center;
             position: absolute;
@@ -213,30 +224,14 @@
             }
         }
 
-        .icon {
-            position: absolute;
-            width: 2.5rem;
-            height: 100%;
-            background-color: $color-primary-dark-2;
-            color: $color-white;
-        }
     }
 
-        p {
-            width: 100%;
-            padding: .5rem 1rem 1rem 1rem;
-            font-size: 1.4rem;
-            color: $color-primary-dark-2;
-            font-weight: 550;
-            text-align: left;
-        }
-    
-
-    &__bg-content {
+    &__icon {
         position: absolute;
-        width: 100%;
+        width: 2.5rem;
         height: 100%;
-        filter: url(#lumpy);
+        background-color: $color-primary-dark-2;
+        color: $color-white;
     }
 
     &__description {
@@ -250,7 +245,7 @@
         filter: url(#lumpy);
 
         
-        &-content {
+        &-container {
             padding: 1.5rem 1rem;
             width: 100%;
             height: 100%;
@@ -269,70 +264,44 @@
         }
     }
 
-    &__bg-description {
+    &__drip {
         position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-
-.drip {
-	position: absolute;
-	height: 10vmin;
-	width: 7vmin;
-	background: $color-white;
-	border-radius: 5vmin;
-
+        height: 10vmin;
+        width: 7vmin;
+        background: $color-white;
+        border-radius: 5vmin;
     
-    &--top {
-        bottom: 2px;
-    }
-
-    &--bottom {
-        top: 2px;
+        
+        &--top {
+            bottom: 2px;
+        }
+    
+        &--bottom {
+            top: 2px;
+            &:nth-child(1) {
+                left: 7%;
+            }
+            &:nth-child(2) {
+                left: 35%;
+            }
+            &:nth-child(3) {
+                right: 4%;
+            }
+        }
+    
         &:nth-child(1) {
-            left: 7%;
+            left: 5%;
         }
         &:nth-child(2) {
-            left: 35%;
+            left: 30%;
+            width: 14vmin;
         }
         &:nth-child(3) {
-            right: 4%;
+            right: 2%;
+            height: 12vmin;
         }
     }
-
-	&:nth-child(1) {
-		left: 5%;
-	}
-	&:nth-child(2) {
-		left: 30%;
-		width: 14vmin;
-	}
-	&:nth-child(3) {
-		right: 2%;
-		height: 12vmin;
-	}
-}
-
-.badge {
-    font-size: 1.2rem;
-    padding: .5rem .7rem;
-    border-radius: 1rem;
-    display: inline;
-    font-weight: 500;
-    transition: all .2s;
-    margin: .3rem;
-    box-shadow: $shadow-hight;
-    color: $color-white;
-
-    &:hover {
-        font-weight: 700;
-    }
+    
 }
 
 
-.bagde__container {
-    @extend %flex-center;
-    flex-wrap: wrap;
-}

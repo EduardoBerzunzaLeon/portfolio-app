@@ -7,6 +7,7 @@ import {
   Project,
   Skill,
   Testimonial,
+  SectionSlip,
   Footer,
   IconsGradientList,
 } from '../_components';
@@ -22,6 +23,7 @@ export default function Home() {
         <Parallax />
         <Skill />
         <Project />
+        <SectionSlip />
         <Testimonial />
         <Contact />
         <Footer />
