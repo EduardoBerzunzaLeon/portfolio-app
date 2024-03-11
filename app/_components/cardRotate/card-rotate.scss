@@ -18,13 +18,9 @@
         backface-visibility: hidden;
         border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 0 3rem 4rem rgba($color-black, .15);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        box-shadow: $shadow-hight;
+        @extend %flex-center;
         flex-direction: column;
-        
-        
         
         &--front{
             background-color: rgba($color-white, .74);
@@ -36,12 +32,6 @@
             transform: rotateY(180deg);
         }
 
-        p{
-            padding: 3rem 2rem;
-            line-height: 3.5rem;
-            font-weight: 500;
-            height: 100%;
-        }
     }
 
     &:hover &__side--front {

@@ -2,8 +2,10 @@
 
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { useState } from 'react';
+import Image from 'next/image';
 import './card-lumpy.scss';
 import { AiOutlineEye } from 'react-icons/ai';
+import proyectPic from './proyect.png';
 
 export const CardLumpy = () => {
   const [ isToggle, setIsToggle ] = useState(false);
@@ -13,24 +15,27 @@ export const CardLumpy = () => {
   };
 
   return (
-    <div className="card-lumpy">
+    <div className="card-lumpy col-4">
       <div className="card-lumpy__container-button">
         <button type="button" className={`card-lumpy__button ${isToggle ? 'isClicked' : ''}`} onClick={onClick} />
       </div>
       <div className="card-lumpy__content">
         <div className="card-lumpy__content-text">
-          <div className="card-lumpy__content-image" />
-          <div className="card-lumpy__content-header">
-            <h3 className="text--left">
-              Tutor App
-            </h3>
-            <div className="icon__container">
-              <span className="tooltip">Ver más</span>
-              <AiOutlineEye className="icon" />
-            </div>
+          {/* // eslint-disable-next-line @next/next/no-img-element */}
+          <Image
+            src={proyectPic}
+            alt="project"
+            className="card-lumpy__content-image"
+          />
+          <h3>
+            Tutor App
+          </h3>
+          <div className="icon__container">
+            <span>Ver más</span>
+            <AiOutlineEye className="icon" />
           </div>
 
-          <p>Sistema de gestion de alumnos y tutores</p>
+          <p>Sistema de gestion de alumnos de univerdad y sus tutores</p>
         </div>
         <div className={`card-lumpy__bg-content ${isToggle ? 'drippping-top' : ''}`}>
           <div className="drip drip--top" />

@@ -1,20 +1,5 @@
 .project {
-    height: inherit;
-
-    h2 {
-        padding-bottom: 3rem;
-    }
-
-    &__container {
-        width: 100%;
-        // height: calc(100vh - 10rem);
-        // background: red;
-        overflow: visible;
-        display: grid;
-        grid-template-columns:  repeat(3, 1fr);
-        grid-template-rows: auto;
-        grid-gap: 2rem;
-        justify-content: center;
-
-    }
+    height: auto;
+    // overflow: visible;
+    // z-index: 1;
 }

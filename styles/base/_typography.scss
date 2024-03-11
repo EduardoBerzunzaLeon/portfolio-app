@@ -22,6 +22,11 @@ h2 {
         transform: scale(1.1);
         text-shadow:   2px 2px 8px #000;
     }
+
+    &.heading-section {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
 }
 
 
@@ -30,11 +35,11 @@ p {
     text-align: justify;
     text-justify: inter-word;
     color: $color-white;
+    font-weight: 500;  
 }
 
-.text--section {
-    text-align: center;
-    padding-top: 5rem;
+.text--wide {
+    line-height: 3.5rem;
 }
 
 .text--center {

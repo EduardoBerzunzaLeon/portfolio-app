@@ -1,5 +1,5 @@
 .header {
-  background-image: $gradient-primary;
+    background-image: $gradient-primary;
     @extend %flex-center;
     flex-wrap: wrap-reverse;
     left: 0;
@@ -35,11 +35,10 @@
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: flex-start;
         justify-content: center;
         margin-top: 1rem;
         backdrop-filter: blur(.5rem);
-        transition: all .5s;
+        transition: $transition-default;
 
         svg {
           cursor: pointer;
@@ -47,7 +46,7 @@
           height: 5.5rem;
           padding: 1rem;
           border-radius: 50%;
-          transition: all .5s;
+          transition: $transition-default;
         }
         
         :not(:last-child) {
@@ -87,9 +86,9 @@
     &__profile img{
         width: 100%;
         height: 100%; 
-        transition: all .5s;
         object-fit: cover;
         object-position: center;
+        transition: $transition-default;
     }
     
 }

@@ -1,5 +1,5 @@
 // COLORS
-$color-white: #fff;
+$color-white: #E0E0E0;
 $color-black: #000;
 $color-primary-light: #030a50;
 $color-primary-dark: #0A1D29;
@@ -19,6 +19,18 @@ $color-node: #3C873A;
 $color-redux: #764abc;
 $color-typescript: #235a97;
 $color-mongo: #3FA037;
+
+// SHADOW
+$shadow-low: 0 .2rem .4rem rgba($color-black, .2);
+$shadow-medium: 0 .5rem 1rem rgba($color-black, .2);
+$shadow-hight: 0 1rem 2rem rgba($color-black, .2);
+
+
+// TRANSITION
+$duration: .5s;
+$lag-duration: calc($duration * 1.5);
+$easing: cubic-bezier(0.77, 0, 0.175, 1);
+$transition-default: all $duration $easing;
 
 // GRADIENTS
 $gradient-primary: linear-gradient( 

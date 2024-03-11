@@ -1,12 +1,12 @@
 .about {
   background-color: $color-primary-dark;
-
-    &__content {
+  
+  &__content {
+      // height: 100%;
+      height: 60vh;
       margin: 0 auto;
-      display: flex;
+      @extend %flex-center;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       color: $color-white;
       text-align: center;
       position: relative;
@@ -16,10 +16,15 @@
       max-width: 440px;
       
       &-text {
+        height: 99%;
         padding: 1.5rem;
         background-color: $color-primary-dark;
-        border-radius: 5px;
+        border-radius: inherit;
         z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
       }
 
       &::before {
@@ -33,15 +38,11 @@
         z-index: 1;
       }
 
-      h2 {
-          padding: 2rem 0;
-      }
-
     }
 
     &__image {
-        width: 50%;
-        height: 50%;
+        width: 70%;
+        height: 60%;
         margin: 0 auto;
         background-image: url('https://picsum.photos/id/1011/250/250');
         background-size: cover;
@@ -58,13 +59,13 @@
         }
 
         &::before {
-          inset: 0.75rem;
+          inset: 0.70rem;
           border-radius: inherit;
           background: black;
           z-index: -1;
           transform: translateZ(-50px);
           filter: blur(15px);
-          opacity: 0.5;
+          opacity: 1;
         }
         
         &::after {

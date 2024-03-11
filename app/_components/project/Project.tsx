@@ -11,16 +11,14 @@ export const Project = () => (
       </filter>
     </svg>
 
-    <div className="row row--center">
-      <h2 className="col-12 text--center">Proyectos</h2>
-      <div className="col-12 project__container">
-        <CardLumpy />
-        <CardLumpy />
-        <CardLumpy />
-        <CardLumpy />
-        <CardLumpy />
-        <CardLumpy />
-      </div>
+    <div className="row row--center row--min-content">
+      <h2 className="col-12 heading-section">Proyectos</h2>
+      <CardLumpy />
+      <CardLumpy />
+      <CardLumpy />
+      <CardLumpy />
+      <CardLumpy />
+      <CardLumpy />
     </div>
   </section>
 );

@@ -18,20 +18,20 @@
             $color-secondary-dark 50%,
         );
         background-size: 220%;
-        transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-        box-shadow: 0 .2rem .4rem rgba($color-black, .2);
+        transition: $transition-default;
+        box-shadow: $shadow-low;
     }
 
     &:hover{
         background-position: right;
         color: $color-primary-dark;
         transform: translate(.2em,-.3rem);
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        box-shadow: $shadow-hight;
     }
 
     &:active {
         transform: translate(-.1rem, .1rem);
-        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+        box-shadow: $shadow-medium;
     }
 
     &--s {
