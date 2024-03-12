@@ -10,7 +10,7 @@ export * from './contact/Contact';
 export * from './footer/Footer';
 export * from './floating-box/FloatingBox';
 export * from './wave/Wave';
-export * from './cardTrack/CardTrack';
+export { CardTrack } from './cardTrack/CardTrack';
 export * from './iconGradient/IconGradient';
 export * from './iconsGradientList/IconsGradientList';
 export * from './cardRotate/CardRotate';

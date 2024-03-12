@@ -1,97 +1,107 @@
-
-
-/* Panels. */
-.splitview {
-    position: relative;
+.split-view {
+    position: absolute;
     width: 100%;
     min-height: 45vw;
     overflow: hidden;
-    z-index: 10;
-}
-
-.panel {
-    position: absolute;
-    width: 100vw;
-    min-height: 45vw;
-    overflow: hidden;
-}
-
-    .panel .content {
+    
+    &__panel {
         position: absolute;
         width: 100vw;
         min-height: 45vw;
-        color: #FFF;
+        overflow: inherit;
+
+        &-content {
+            position: inherit;
+            width: 100vw;
+            min-height: 45vw;
+            color: $color-white;
+
+            &--skew {
+                transform: skew(30deg);
+                margin-left: 1000px;
+            }
+        }
+
+        &-description {
+            width: 25%;
+            position: absolute;
+            height: 100%;
+            text-align: center;
+            flex-direction: column;
+            @extend %flex-center;
+
+            h2 {
+                margin-bottom: 2rem;
+            }
+            
+            &--right {
+                right: 5%;
+            }
+
+                        
+            &--left {
+                left: 5%;
+            }
+        }
+
+        figure {
+            @extend %absolute-center;
+            width: 35%;
+            
+            img {
+                width: 100%;
+                box-shadow: $shadow-hight;
+                border-radius: 3vmin;
+            }
+            
+            figcaption {
+                @extend %absolute-center;
+                font-size: 3rem;
+                font-weight: 700;
+                text-transform: uppercase;
+               mix-blend-mode: overlay;
+               line-height: 10rem;
+               text-align: center;
+            }
+        }
+
+        &__image--top:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($color-primary-dark, .8);
+            border-radius: 3vmin;
+        }
+
+
+        &--bottom {
+            background-color: $color-secondary-dark;
+            z-index: 1;
+        }
+
+        &--top {
+            background: $color-primary-dark-2;
+            z-index: 2;
+            width: 50vw;
+            transform: skew(-30deg);
+            margin-left: -1000px;
+            width: calc(50vw + 1000px);
+        }
     }
 
-    .panel .description {
-        width: 25%;
+    &__handle {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
-    }
-
-    .panel img {
-        box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
-        width: 35%;
-        position: absolute;
-        top: 50%;
+        display: block;
+        background-color: $color-primary-dark;
+        width: 8px;
+        top: 0;
         left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-
-.bottom {
-    background-color: rgb(44, 44, 44);
-    z-index: 1;
-}
-
-    .bottom .description {
-        right: 5%;
-    }
-
-.top {
-    background-color: rgb(77, 69, 173);
-    z-index: 2;
-    width: 50vw;
-}
-
-    .top .description {
-        left: 5%;
-    }
-
-/* Handle. */
-.handle {
-    position: absolute;
-    display: block;
-    background-color: rgb(253, 171, 0);
-    width: 5px;
-    top: 0;
-    left: 50%;
-    z-index: 3;
-}
-
-/* Skewed. */
-.skewed .handle {
-    transform: rotate(30deg) translateY(-25%);
-    height: 200%;
-    transform-origin: 25% 25%;
-}
-
-.skewed .top {
-    transform: skew(-30deg);
-    margin-left: -1000px;
-    width: calc(50vw + 1000px);
-}
-
-.skewed .top .content {
-    transform: skew(30deg);
-    margin-left: 1000px;
-}
-
-/* Responsive. */
-@media (max-width: 900px) {
-    body {
-        font-size: 75%;
+        z-index: 3;
+        transform: rotate(30deg) translateY(-25%);
+        height: 200%;
+        transform-origin: 25% 25%;
     }
 }

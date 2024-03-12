@@ -19,35 +19,46 @@ export const SectionSlip = () => {
 
     handle.current.style.left = handleLeft;
     topPanel.current.style.width = panelTopWith;
-    // handle.current!.style.left = `${event.clientX + delta}px`;
   };
 
   return (
     <section>
-      <div className="splitview skewed" onMouseMove={handleMouseMove}>
-        <div className="panel bottom">
-          <div className="content">
-            <div className="description">
-              <h1>The original image.</h1>
-              <p>This is how the image looks like before applying a duotone effect.</p>
+      <div className="split-view" onMouseMove={handleMouseMove}>
+        <div className="split-view__panel split-view__panel--bottom">
+          <div className="split-view__panel-content">
+            <div className="split-view__panel-description split-view__panel-description--right">
+              <h2 className="text-grad--primary">Convertir tus sueños</h2>
+              <p>Todo lo que has soñado una vez, lo plasmamos en una aplicación web</p>
             </div>
 
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/original-image.jpg" alt="Original" />
+            <figure>
+              <img
+                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/original-image.jpg"
+                alt="Original"
+              />
+              <figcaption>Reinventa Reevoluciona Descubre</figcaption>
+            </figure>
           </div>
         </div>
 
-        <div className="panel top" ref={topPanel}>
-          <div className="content">
-            <div className="description">
-              <h1>The duotone image.</h1>
-              <p>This is how the image looks like after applying a duotone effect.</p>
+        <div className="split-view__panel split-view__panel--top" ref={topPanel}>
+          <div className="split-view__panel-content split-view__panel-content--skew">
+            <div className="split-view__panel-description split-view__panel-description--left">
+              <h2 className="text-grad--secondary">The duotone image.</h2>
+              <p>Todo lo que has soñado una vez, lo plasmamos en una aplicación web</p>
             </div>
 
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/duotone-image.jpg" alt="Duotone" />
+            <figure className="split-view__panel__image--top">
+              <img
+                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/original-image.jpg"
+                alt="Duotone"
+              />
+              <figcaption>Reinventa Reevoluciona Descubre</figcaption>
+            </figure>
           </div>
         </div>
 
-        <div className="handle" ref={handle} />
+        <div className="split-view__handle" ref={handle} />
       </div>
     </section>
   );

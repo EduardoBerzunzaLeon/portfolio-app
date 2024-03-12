@@ -11,7 +11,7 @@ h2 {
     background-clip: text;
     background: $gradient-secondary;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: .2rem;
     text-transform: uppercase;
     -webkit-background-clip: text;
@@ -20,7 +20,7 @@ h2 {
 
     &:hover {
         transform: scale(1.1);
-        text-shadow:   2px 2px 8px #000;
+        text-shadow: $shadow-hight;
     }
 
     &.heading-section {
