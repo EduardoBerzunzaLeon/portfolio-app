@@ -3,11 +3,11 @@ import {
   Contact,
   Header,
   Navbar,
+  SectionSlip,
   Parallax,
   Project,
   Skill,
   Testimonial,
-  SectionSlip,
   Footer,
   IconsGradientList,
 } from '../_components';

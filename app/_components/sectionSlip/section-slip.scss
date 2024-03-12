@@ -1,14 +1,4 @@
-/* Reset. */
-* {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 /* Panels. */
 .splitview {
@@ -16,6 +6,7 @@ body {
     width: 100%;
     min-height: 45vw;
     overflow: hidden;
+    z-index: 10;
 }
 
 .panel {
