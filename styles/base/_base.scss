@@ -17,13 +17,13 @@ html {
 
 body {
     box-sizing: border-box;
+    background: $color-primary-dark;
 }
 
 header, section {
     position: relative;
     height: 100vh;
     width: 100%;
-    background: $color-primary-dark;
 }
 
 
