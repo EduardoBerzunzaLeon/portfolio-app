@@ -1,24 +1,28 @@
 import { FaQuoteRight } from 'react-icons/fa';
 import './card-testimonial.scss';
 
-export const CardTestimonial = () => (
-  <div className="card-testimonial col-4">
+interface Props {
+  name: string;
+  comment: string;
+  imgUrl: string;
+  nameDescription: string;
+}
+
+export const CardTestimonial = ({
+  name, comment, imgUrl, nameDescription,
+}: Props) => (
+  <div className="card-testimonial">
     <div className="content">
       <div className="text">
         <FaQuoteRight className="icon icon--right" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <p>{ comment }</p>
         <FaQuoteRight className="icon icon--left" />
       </div>
       <figure>
-        <img src="https://picsum.photos/id/1011/250/250" alt="testing" />
+        <img src={imgUrl} alt="testing" />
         <figcaption>
-          <h3>Eduardo berzunza</h3>
-          <span>Developer UX / UI</span>
+          <h3>{ name }</h3>
+          <span>{ nameDescription }</span>
         </figcaption>
       </figure>
     </div>
