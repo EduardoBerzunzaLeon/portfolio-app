@@ -1,14 +1,126 @@
+.section-contact {
+    // width: 100%;
+    // height: 90vh;
+
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // flex-direction: column;
+    // background: $color-primary-dark;
+    // background: red;
+}
+
 .contact {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: $color-primary-dark;
+    height: 90vh;
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-secondary-dark, .9) 0%, 
+        rgba($color-secondary-dark, .8) 50%, 
+        transparent 50%),
+    url(./background-parallax.jpg);
+    background-size: cover; // el 100% es que ocupe el 100% pero deL EJE X
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+    
+    &__form {
+        width: 50%;
+        padding: 6rem;
 
+    }
 
     h2 {
         padding: 4rem;
+    }
+}
+
+.form {
+    display: flex;
+    // align-items: start;
+    // justify-content: space-evenly;
+    flex-direction: column;
+    // width: max-content;
+
+    &-group {
+
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 100%;
+        display: block;
+        transition: all .3s;
+
+
+        &:focus {
+            outline: none;
+            box-shadow: $shadow-hight;
+            border-bottom: 4px solid $color-primary-dark;
+        }
+
+        &:focus:invalid {
+            border-bottom: 4px solid $color-tertiary-dark;
+        }
+
+        // &:focus + label,
+        // &:valid + label,
+        // &:focus:invalid + label {
+        //     transform: translateY(-4.6rem);
+        //     top: -1rem;
+        //     font-weight: 700;
+        //     font-weight: 700;
+        //     color: $gradient-secondary;
+            
+        // }
+
+        &::placeholder {
+            color: $color-primary-dark-2;
+        }
+    }
+
+    &__label {
+        font-size: 1.5rem;
+        color: $color-primary-dark;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2rem;
+        transition: $transition-default;
+        pointer-events: none;
+        background-clip: text;
+
+    }
+
+    button {
+        align-self: center;
+    }
+
+}
+
+.spancito {
+    display: inline-block;
+    // transform: translateY(-4.6rem);
+    // font-weight: 700;
+    // transition: all .5s ease;
+    animation: testing .5s $easing both;
+}
+
+@keyframes testing {
+    100% {
+        font-weight: 700;
+        transform: translateY(-4.6rem);
     }
 }

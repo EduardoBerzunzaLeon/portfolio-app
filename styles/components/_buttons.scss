@@ -46,4 +46,23 @@
         padding: 1.5rem 5rem;
     }
 
+
+    &-primary {
+        border: .3rem solid $color-primary-dark;
+        color: $color-primary-dark;
+        background: linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 50%,
+            $color-primary-dark 50%,
+        );
+        background-size: 220%;
+        
+        &:hover{
+            background-position: right;
+            color: $color-secondary-dark;
+            transform: translate(.2em,-.3rem);
+            box-shadow: $shadow-hight;
+        }
+    }
 }
